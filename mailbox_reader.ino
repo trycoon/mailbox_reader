@@ -21,7 +21,19 @@ void setup() {
   Serial.println("OneWire-Hub emulating DS2433 for mailbox status reading. Address: 000D020401EA");
 
   pinMode(pin_led, OUTPUT);
-  digitalWrite(pin_led, HIGH);  // Make sure LED is off.
+
+  // Flash LED three times to show that we are ready.
+  digitalWrite(pin_led, LOW);
+  delay(1000);
+  digitalWrite(pin_led, HIGH);
+  delay(1000);
+  digitalWrite(pin_led, LOW);
+  delay(1000);
+  digitalWrite(pin_led, HIGH);
+  delay(1000);
+  digitalWrite(pin_led, LOW);
+  delay(1000);
+  digitalWrite(pin_led, HIGH);
 
   // Setup OneWire
   hub.attach(ds2433);
